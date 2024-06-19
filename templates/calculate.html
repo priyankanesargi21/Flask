@@ -1,0 +1,27 @@
+<html>
+    <head>
+    </head>
+
+    <body>
+        <div class="calculate">
+            <h1> Calculate average marks </h1>
+
+            <form action="{{ url_for('calculate')}}" method="post">
+                <input type="text" name="maths" placeholder="Maths" required="required" />
+                <input type="text" name="science" placeholder="Science" required="required" />
+                <input type="text" name="history" placeholder="History" required="required" />
+
+                <button type="submit" class="btn btn-primary btn-block btn-large"> Calculate </button>
+                {% if results %}
+                {% if results >=50%}
+                    The result is pass and Average marks is {{results}}
+                {% else %}
+                The result is failure and Average marks is {{results}}
+                 {% endif %}
+                 {% endif %}
+            </form>
+        </div>
+
+    </body>
+</html>
+
